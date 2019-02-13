@@ -3,8 +3,8 @@ Linking an ABB robot to a Geomagic Touch haptic device using ROS
 
 This is all the contents of the src folder.
 
-The geomagic touch packages are edited versions of the original omni packages (LINK)
-The ABB ros packages are stripped down versions of the original (LINK)
+The geomagic touch packages are edited versions of the original omni packages (https://github.com/danepowell/phantom_omni)  
+The ABB ros packages are stripped down versions of the original (https://github.com/ros-industrial/abb)  
 
 The pathmaker_abb package is custom written by me.
 
@@ -40,8 +40,8 @@ $ rosrun pathmaker_abb pathmaker_abb
 
 ---Usage---  
 On the geomagic touch press the white button to initially enable the link between the 2 devices. This will make the target_frame appear in the rviz scene with the ABB robot in there (if you followed all steps correctly).   
-The white button toggles the connection on/off  
-The grey button disables the connection while the button is held and also resets the target_frame to match the current abb frame.  
+- The white button toggles the connection on/off  
+- The grey button disables the connection while the button is held and also resets the target_frame to match the current abb frame.  
 
 
 
