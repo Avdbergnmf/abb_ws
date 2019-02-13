@@ -10,7 +10,7 @@ The pathmaker_abb package is custom written by me.
 
 ---Install---  
 clone this git:  
-$ git clone git clone https://github.com/ros-industrial/industrial_core.git  
+$ git clone git clone https://github.com/Avdbergnmf/abb_ws.git
 Get the ros industrial core installed:  
 $ git clone https://github.com/ros-industrial/industrial_core.git  
 
