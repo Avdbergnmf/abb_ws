@@ -7,3 +7,5 @@ The geomagic touch packages are edited versions of the original omni packages (L
 The ABB ros packages are stripped down versions of the original (LINK)
 
 The pathmaker_abb package is custom written by me.
+
+might need to build twice, while sourcing in between. Might remove this bug later.
