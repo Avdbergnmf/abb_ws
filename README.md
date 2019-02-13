@@ -15,9 +15,9 @@ Get the ros industrial core installed:
 $ git clone https://github.com/ros-industrial/industrial_core.git
 
 If you get error: "/usr/bin/ld: cannot find "-lncurses"", you're missing the 32bit libraries. To install them: 
-$ sudo apt-get install lib32ncurses5-dev
-$ rosdep update
-$ rosdep install --from-paths ~/<catkin_ws>/src --ignore-src 
+\$ sudo apt-get install lib32ncurses5-dev
+\$ rosdep update
+\$ rosdep install --from-paths ~/<catkin_ws>/src --ignore-src 
 
 Might need to build twice, while sourcing in between. Might remove this bug later.
 
