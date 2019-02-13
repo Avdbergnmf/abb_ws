@@ -44,4 +44,8 @@ On the geomagic touch press the white button to initially enable the link betwee
 - The grey button disables the connection while the button is held and also resets the target_frame to match the current abb frame.  
 
 
-
+---Notes---
+This package works marginally, as the robot now moves very slowly. Reasons for this could include:
+- Every time the robot receives a new path command it will come to a standstill before launching the next trajectory  
+- The planning of the inverse kinematics happens through an iterative solver, but this can also be done by setting up the equations of motion and solving analytically. This would improve the solve time drastically and might improve the refresh rate
+- 
