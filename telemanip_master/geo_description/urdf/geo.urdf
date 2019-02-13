@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+    xmlns="http://www.ros.org/wiki/urdf"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation=
+    "https://raw.github.com/laas/urdf_validator/master/urdf.xsd"
+    name="geo">
+  <link name="base" >
+    <visual>
+      <origin xyz="0 0 0.045" />
+      <geometry>
+	<cylinder radius="0.06" length="0.09" />
+      </geometry>
+    </visual>
+  </link>
+  <link name="torso" >
+    <visual>
+      <origin xyz="0 0 0.04" />
+      <geometry>
+	<sphere radius=".06" />
+      </geometry>
+    </visual>
+  </link>
+  <link name="upper_arm" >
+    <visual>
+      <origin xyz="0.0655 0 0" />
+      <geometry>
+	<box size="0.131 0.02 0.035" />
+      </geometry>
+    </visual>
+  </link>
+  <link name="lower_arm" >
+    <visual>
+      <origin xyz="0.0685 0 0" />
+      <geometry>
+	<box size="0.137 0.02 0.025" />
+      </geometry>
+    </visual>
+  </link>
+  <link name="wrist1" />
+  <link name="wrist2" />
+  <link name="stylus" >
+    <visual>
+      <origin xyz="0.025 0 0" rpy="0 1.57 0" />
+      <geometry>
+	<cylinder radius="0.01" length="0.135" />
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="waist" type="continuous" >
+    <parent link="base" />
+    <child link="torso" />
+    <origin xyz="0 0 0.09" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <joint name="shoulder" type="continuous" >
+    <parent link="torso" />
+    <child link="upper_arm" />
+    <origin xyz="0 0 0.04" rpy="0 0 0" />
+    <axis xyz="0 -1 0" />
+  </joint>
+
+  <joint name="elbow" type="continuous" >
+    <parent link="upper_arm" />
+    <child link="lower_arm" />
+    <origin xyz="0.131 0 0" rpy="0 1.5 0" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  
+  <joint name="wrist1" type="continuous" >
+    <parent link="lower_arm" />
+    <child link="wrist1" />
+    <origin xyz="0.137 0 0" />
+    <axis xyz="1 0 0" />
+  </joint>
+  
+  <joint name="wrist2" type="continuous" >
+    <parent link="wrist1" />
+    <child link="wrist2" />
+    <origin xyz="0.05 0 0" rpy="0 -0.5 0" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  
+  <joint name="wrist3" type="continuous" >
+    <parent link="wrist2" />
+    <child link="stylus" />
+    <origin xyz="0.01 0 0" />
+    <axis xyz="1 0 0" />
+  </joint>
+</robot>
+

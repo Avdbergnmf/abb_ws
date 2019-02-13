@@ -1,0 +1,24 @@
+<launch>
+    <arg name="rviz" default="true"/>
+
+    <!-- Start Geomagic Touch Control Node -->
+    <node name="geomagic_touch_m" pkg="geomagic_touch_m" type="geomagic_touch_m" output="screen">
+    </node>
+
+    <!-- robot_description tells robot_state_publisher where to find the geo's urdf description -->
+    <param name="geo_robot_description" command="cat $(find geo_description)/urdf/geo.urdf" />
+    
+    <!-- robot_state_publisher reads omni1_joint_states and publishes corresponding tfs -->
+    <node name="geo_robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+    <remap from="joint_states" to="geo_joint_states" />
+    <remap from="robot_description" to="geo_robot_description" />
+    </node> 
+
+
+    <group if="$(arg rviz)">
+        <!-- rviz just lets you see the end result :) -->
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find geomagic_touch_m)/cfg/geo.rviz" required="false" />
+
+    </group>
+
+</launch>

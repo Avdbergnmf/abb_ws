@@ -1,0 +1,26 @@
+<package>
+
+    <name>geomagic_touch_m</name>
+    <version>1.0.0</version>
+    <description>
+    ROS Node for control of 3DS Geomagic Touch Haptic Master Device (Master side)
+    Adapted from phantom_omni package by Dane Powell https://github.com/danepowell/phantom_omni
+    </description>
+    <maintainer email="n.mol@heemskerk-innovative.nl">Nicky Mol</maintainer>
+    <author>Nicky Mol, Guido van der Hart, Dane Powell, Hai Nguyen, Marc Killpack, Chi-Hung King, Advisor: Prof. Charlie Kemp, Lab: Healthcare Robotics Lab at Georgia Tech</author>
+    <license>new BSD</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <build_depend>roscpp</build_depend>
+    <build_depend>std_msgs</build_depend>
+    <build_depend>tf</build_depend>
+    <build_depend>geometry_msgs</build_depend>
+    <build_depend>openhaptics-ae</build_depend>
+
+    <run_depend>roscpp</run_depend>
+    <run_depend>std_msgs</run_depend>
+    <run_depend>tf</run_depend>
+    <run_depend>geometry_msgs</run_depend>
+
+</package>
