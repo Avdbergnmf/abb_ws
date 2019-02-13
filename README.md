@@ -1,7 +1,7 @@
 # abb_ws
-Linking an ABB IRB1200 5-90 robot to a Geomagic Touch haptic device using ROS
+Linking an ABB IRB1200 5-90 robot to a Geomagic Touch haptic device using ROS. This could relatively easily be converted to other supported ABB robots but the supporting ros packages are not included for storage reasons.
 
-This is all the contents of the src folder.
+This is all the contents of the src folder for a fresh catkin workspace.
 
 The geomagic touch packages are edited versions of the original omni packages (https://github.com/danepowell/phantom_omni)  
 The ABB ros packages are stripped down versions of the original (https://github.com/ros-industrial/abb)  
