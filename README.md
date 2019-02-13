@@ -1,5 +1,5 @@
 # abb_ws
-Linking an ABB robot to a Geomagic Touch haptic device using ROS
+Linking an ABB IRB1200 5-90 robot to a Geomagic Touch haptic device using ROS
 
 This is all the contents of the src folder.
 
@@ -48,4 +48,4 @@ On the geomagic touch press the white button to initially enable the link betwee
 This package works marginally, as the robot now moves very slowly. Reasons for this could include:
 - Every time the robot receives a new path command it will come to a standstill before launching the next trajectory  
 - The planning of the inverse kinematics happens through an iterative solver, but this can also be done by setting up the equations of motion and solving analytically. This would improve the solve time drastically and might improve the refresh rate
-- 
+- The limited speed of the ABB robot itself (especially in manual mode)
