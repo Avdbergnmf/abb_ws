@@ -82,11 +82,11 @@ void commClass::publish_goal()
     
     // Do a rotation to match the real scene
     tf::Quaternion frameRotation = TF_geo_pose.getRotation();
-    TF_geo_pose.setRotation( tf::Quaternion(0,0,0.707,0.707)*frameRotation );  // 90 deg around z axis: from https://quaternions.online/
+    TF_geo_pose.setRotation( tf::Quaternion(0,0,1,0)*frameRotation ); // 90 deg around z axis: from https://quaternions.online/
 
     // Transform the translation aswel and put into geometry msg
-    geo_pose.position.x = - TF_geo_pose.getOrigin().getY();
-    geo_pose.position.y =   TF_geo_pose.getOrigin().getX();
+    geo_pose.position.x = - TF_geo_pose.getOrigin().getX();
+    geo_pose.position.y = - TF_geo_pose.getOrigin().getY();
     geo_pose.position.z =   TF_geo_pose.getOrigin().getZ();
     geo_pose.orientation.x = TF_geo_pose.getRotation().getX();
     geo_pose.orientation.y = TF_geo_pose.getRotation().getY();
