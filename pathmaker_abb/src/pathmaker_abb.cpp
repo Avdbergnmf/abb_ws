@@ -79,10 +79,15 @@ void commClass::publish_goal()
     tf::TransformListener tf_listener;
     tf_listener.waitForTransform("base", "stylus", ros::Time(0), ros::Duration(0.25));
     tf_listener.lookupTransform("base", "stylus", ros::Time(0), TF_geo_pose);
-    // convert to pose geometry msg
-    geo_pose.position.x = TF_geo_pose.getOrigin().getX();
-    geo_pose.position.y = TF_geo_pose.getOrigin().getY();
-    geo_pose.position.z = TF_geo_pose.getOrigin().getZ();
+    
+    // Do a rotation to match the real scene
+    tf::Quaternion frameRotation = TF_geo_pose.getRotation();
+    TF_geo_pose.setRotation( tf::Quaternion(0,0,0.707,0.707)*frameRotation );
+
+    // Transform the translation aswel and put into geometry msg
+    geo_pose.position.x = - TF_geo_pose.getOrigin().getY();
+    geo_pose.position.y =   TF_geo_pose.getOrigin().getX();
+    geo_pose.position.z =   TF_geo_pose.getOrigin().getZ();
     geo_pose.orientation.x = TF_geo_pose.getRotation().getX();
     geo_pose.orientation.y = TF_geo_pose.getRotation().getY();
     geo_pose.orientation.z = TF_geo_pose.getRotation().getZ();
